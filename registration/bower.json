@@ -1,0 +1,19 @@
+{
+  "name": "registration",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ClaytonNorthey92/helloworldregister",
+  "authors": [
+    "ClaytonNorthey92 <clayton.northey@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "semantic": "semantic-ui#~2.1.8"
+  }
+}
