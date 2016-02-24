@@ -1,7 +1,3 @@
-registration/static
 env
 node_modules
-!registration/static/sass
-!registration/static/css
-!reigstration/static/components
-!registration/static/compiled-js
+bower
