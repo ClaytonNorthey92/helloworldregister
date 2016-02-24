@@ -53,10 +53,16 @@ class PageTests(DataMixin, StaticLiveServerTestCase):
         self.driver = webdriver.Firefox()
         user_count = RegisterUser.objects.count()
         self.browser_get('/users/register')
-        for key, value in self.data.items():
+        for key, value in sorted(self.data.items(), reverse=True):
             current_field = self.driver.find_element_by_id(key + '_input')
+            current_field.click()
             current_field.send_keys(value)
+            time.sleep(0.5)
         time.sleep(1)
         save_button = self.driver.find_element_by_id('save-button')
         self.click(save_button)
         self.assertEqual(RegisterUser.objects.count(), user_count + 1)
+
+        self.assertIn('admin', self.driver.current_url)
+        self.driver.find_elements_by_xpath('//td[contains(text(), "{}")]'
+            .format(self.data['first_name']))

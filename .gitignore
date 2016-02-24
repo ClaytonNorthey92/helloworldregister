@@ -1,3 +1,5 @@
 registration/static
 env
 node_modules
+!registration/static/sass
+!reigstration/static/components

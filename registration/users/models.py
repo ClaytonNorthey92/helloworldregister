@@ -12,5 +12,6 @@ class RegisterUser(models.Model):
     address_2 = models.CharField(max_length=100, null=True, blank=True)
     city = models.CharField(max_length=50)
     state = models.CharField(max_length=2, choices=CONTIGUOUS_STATES)
-    postal = models.CharField(max_length=9, validators=[validate_five_or_nine])
+    postal = models.IntegerField(max_length=9, validators=[validate_five_or_nine])
     country = models.CharField(max_length=2, choices=COUNTRY_CHOICES)
+    created = models.DateTimeField(auto_now_add=True)

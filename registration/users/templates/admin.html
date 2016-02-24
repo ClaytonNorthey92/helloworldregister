@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if not users %}
+    <div class="ui card">
+      <div class="content">
+        <div class="header">
+          Looks like you have no users saved yet!
+        </div>
+        <div class="description">
+          Click the "Register a User" option on the left to add your first one!
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if users %}
+    <table class="ui celled table">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Address 1</th>
+          <th>Address 2</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zip</th>
+          <th>Country</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in users %}
+        <tr>
+          <td>{{ user.first_name }}</td>
+          <td>{{ user.last_name }}</td>
+          <td>{{ user.address_1 }}</td>
+          <td>{{ user.address_2 }}</td>
+          <td>{{ user.city }}</td>
+          <td>{{ user.state }}</td>
+          <td>{{ user.postal }}</td>
+          <td>{{ user.country }}</td>
+          <td>{{ user.created }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endif %}
+{% endblock %}
