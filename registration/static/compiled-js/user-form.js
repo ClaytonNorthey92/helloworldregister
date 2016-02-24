@@ -16,7 +16,7 @@ var UserForm = React.createClass({
     event.preventDefault();
     var apiUrl = '/api/users/create';
     $.post(apiUrl, this.state).then(function (promise) {
-      window.location.href = '/admin';
+      window.location.href = '/confirm';
     });
   },
   componentDidUpdate: function componentDidUpdate() {

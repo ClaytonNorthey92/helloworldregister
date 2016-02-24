@@ -63,6 +63,6 @@ class PageTests(DataMixin, StaticLiveServerTestCase):
         self.click(save_button)
         self.assertEqual(RegisterUser.objects.count(), user_count + 1)
 
-        self.assertIn('admin', self.driver.current_url)
+        self.assertIn('/confirm', self.driver.current_url)
         self.driver.find_elements_by_xpath('//td[contains(text(), "{}")]'
             .format(self.data['first_name']))
