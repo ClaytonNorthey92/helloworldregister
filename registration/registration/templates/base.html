@@ -1,14 +1,21 @@
 {% load staticfiles %}
-
-<link rel="stylesheet" type="text/css" href="{% static 'semantic/dist/semantic.css' %}">
-
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'semantic/dist/semantic.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/site.css' %}">
+    <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'semantic/dist/semantic.min.js' %}"></script>
+    <script src="{% static 'react/react.js' %}"></script>
+    <script src="{% static 'react/react-dom.min.js' %}"></script>
+    <script src="{% static 'underscore/underscore-min.js' %}"></script>
+</head>
 <body>
-  <div class="ui secondary pointing menu">
-    <a class="item">Admin View</a>
-    <a class="item active">Register a User</a>
+  <div class="ui grid">
+    <div id='nav-bar'></div>
+    <div class="page-part">
+      {% block content %}
+      {% endblock %}
+    </div>
   </div>
-  {% block content %}
-  {% endblock %}
-  <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
-  <script src="{% static 'semantic/dist/semantic.min.js' %}"></script>
+
+  <script src="{% static 'compiled-js/nav-bar.js' %}"></script>
 </body>

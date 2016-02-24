@@ -2,4 +2,12 @@
 
 {% block content %}
 
+<div id="user-form"></div>
+
+{% load staticfiles %}
+<script src="{% static 'compiled-js/form-fields/shared-functions.js' %}"></script>
+<script src="{% static 'compiled-js/form-fields/text-input.js' %}"></script>
+<script src="{% static 'compiled-js/form-fields/state-select.js' %}"></script>
+<script src="{% static 'compiled-js/form-fields/country-select.js' %}"></script>
+<script src="{% static 'compiled-js/user-form.js' %}"></script>  
 {% endblock %}
