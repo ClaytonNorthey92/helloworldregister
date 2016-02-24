@@ -2,4 +2,4 @@ env
 node_modules
 bower
 production_static
-db.sqlite3
+registration/db.sqlite3
