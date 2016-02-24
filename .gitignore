@@ -4,4 +4,4 @@ node_modules
 !registration/static/sass
 !registration/static/css
 !reigstration/static/components
-!registration/static/compiled_js
+!registration/static/compiled-js
